@@ -1,7 +1,6 @@
 .container {
     margin: 2em auto;
     max-width:900px ;
-    background: cornflowerblue;
 }
 
 .shrnk-box {
@@ -11,10 +10,15 @@
 
 .input-box {
     text-align-last: center;
+
    
 }
 .input{
-    width:80%
+    width:100%;
+    padding: 0.5rem 0.75rem; 
+    line-height: 28px; 
+    border:0;
+    border-bottom: 2px solid purple;
 }
 
 .shrnk-btn-box{
@@ -26,8 +30,27 @@
     padding: 0.75em;
     background-color: darkmagenta;
     border-radius: 2px;
-    box-shadow: 2px 2px white;
+    box-shadow: 2px 2px pink;
     color: white;
+}
+
+.output-link {
+    padding: 1em;
+    text-align: center;
+    background-color: pink;
+}
+
+.link {
+    text-align: center;
+}
+
+.copy-btn {
+    cursor:pointer ;
+    width: 25%;
+    margin: 0.5em auto;
+}
+.op--link {
+    margin-bottom: 1em;
 }
 
 
@@ -35,5 +58,20 @@
     .shrnk-form {
         display:flex;
         justify-content:space-between ;
+    }
+
+    .input-box {
+        width: 90%;
+        margin: auto;
+    }
+    .output-link {
+        display: flex;
+        justify-content: space-around;
+    }
+    .op--link {
+        margin: auto;
+    }
+    .copy-btn {
+        margin: 0;
     }
 }

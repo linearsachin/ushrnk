@@ -18,4 +18,30 @@
         </form>
     </div>
 </div>
+
+<div class="container">
+    <div class="output-link">
+        <div class="op--link">
+            <a href="https://ushrnk.herokuapp.com/abcd" class="link" target="_blank">https://ushrnk.herokuapp.com/abcd</a>
+        </div>
+        <div class="copy-btn" onclick="copyToClipboard('.link')">
+            <span class="material-icons">
+                content_copy
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+
+
+
+</script>
 {% endblock content %}

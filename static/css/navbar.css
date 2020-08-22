@@ -19,11 +19,11 @@ a {
 .menu-btn{
     padding: 1em;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 .side-nav {
     display: none;
-    text-align-last: center;
-    
+    text-align-last: center;  
 }
 nav {
     font-family: 'Roboto', sans-serif;
@@ -50,6 +50,7 @@ nav {
 @media screen and (min-width:600px){
     .menu-btn {
         display: none;
+        cursor: pointer;
     }
     .navbar {
         display: flex;
