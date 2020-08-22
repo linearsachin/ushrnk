@@ -40,10 +40,16 @@ class HomeView(View):
             return render(request,'core/index.html',context)
 
     def unique_id(self):
-        letters = string.ascii_letters
-        ui = str(random.randint(100,999)) + ''.join(random.choice(letters) for i in range(4))
-        sr = ''.join(random.sample(ui, len(ui)))
-        return sr
+        we_dont_have_it = True
+        while we_dont_have_it:
+            try:
+                letters = string.ascii_letters
+                ui = str(random.randint(100,999)) + ''.join(random.choice(letters) for i in range(4))
+                sr = ''.join(random.sample(ui, len(ui)))
+                return sr
+            except:
+                we_dont_have_it=True
+        return None
 
 class ShrnkView(View):
     def get(self, request,slug, *args, **kwargs):
