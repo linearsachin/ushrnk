@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic import View ,ListView
 import random, string
 from .models  import (
@@ -44,3 +44,12 @@ class HomeView(View):
         ui = str(random.randint(100,999)) + ''.join(random.choice(letters) for i in range(4))
         sr = ''.join(random.sample(ui, len(ui)))
         return sr
+
+class ShrnkView(View):
+    def get(self, request,slug, *args, **kwargs):
+        shrnk_url = ShrnkUrl.objects.get(
+            shrnk_url_slug=slug
+        )
+        return redirect(shrnk_url.og_url)
+    def post(self, request, *args, **kwargs):
+        return HttpResponse('POST request!')

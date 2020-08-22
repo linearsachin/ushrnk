@@ -10,7 +10,7 @@ class ShrnkUrl(models.Model):
     def __str__(self):
         return self.shrnk_url_slug
     def get_shrnk_url(self):
-        return f"https://ushrnk.herokuapp.com/{self.shrnk_url_slug}"
+        return f"http://127.0.0.1:8000/u/{self.shrnk_url_slug}"
 
     class Meta:
         db_table = ''
