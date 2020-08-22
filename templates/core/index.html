@@ -8,21 +8,22 @@
 {% block content %}
 <div class="container">
     <div class="shrnk-box">
-        <form action="#" class="shrnk-form">
+        <form action="#" method="POST" class="shrnk-form">
+            {% csrf_token %}
             <div class="input-box">
-                <input type="text" class="input">
+                {{form.og_url}}
             </div>
             <div class="shrnk-btn-box">
-                <a href="" class="shrnk-btn">SHRNK</a>
+                <input  class="shrnk-btn" type="submit" value="SHRNK"/>
             </div>
         </form>
     </div>
 </div>
-
+{% if slug %}
 <div class="container">
     <div class="output-link">
         <div class="op--link">
-            <a href="https://ushrnk.herokuapp.com/abcd" class="link" target="_blank">https://ushrnk.herokuapp.com/abcd</a>
+            <a href="{{slug.get_shrnk_url}}" class="link" target="_blank">{{slug.get_shrnk_url}}</a>
         </div>
         <div class="copy-btn" onclick="copyToClipboard('.link')">
             <span class="material-icons">
@@ -31,7 +32,7 @@
         </div>
     </div>
 </div>
-
+{% endif %}
 <script>
     function copyToClipboard(element) {
         var $temp = $("<input>");
