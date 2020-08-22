@@ -1,2 +1,6 @@
 ushort/.env
 *.sqlite3
+*.pyc
+db.sqlite3
+__pycache__
+development.py
