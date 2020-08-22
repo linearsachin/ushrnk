@@ -1,0 +1,39 @@
+.container {
+    margin: 2em auto;
+    max-width:900px ;
+    background: cornflowerblue;
+}
+
+.shrnk-box {
+    padding:3em;
+    
+}
+
+.input-box {
+    text-align-last: center;
+   
+}
+.input{
+    width:80%
+}
+
+.shrnk-btn-box{
+    text-align-last: center;
+    margin: 1em;
+}
+
+.shrnk-btn {
+    padding: 0.75em;
+    background-color: darkmagenta;
+    border-radius: 2px;
+    box-shadow: 2px 2px white;
+    color: white;
+}
+
+
+@media screen and (min-width:600px) {
+    .shrnk-form {
+        display:flex;
+        justify-content:space-between ;
+    }
+}

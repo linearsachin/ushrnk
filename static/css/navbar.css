@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+.navbar{
+    background-color: pink;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Playfair Display SC', sans-serif;
+    padding: 1em;
+    font-size: 1.5rem;
+}
+.menu-btn{
+    padding: 1em;
+    font-size: 1.5rem;
+}
+.side-nav {
+    display: none;
+    text-align-last: center;
+    
+}
+nav {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.nav-item {
+    padding: 1em 0 1em 0;
+    color: white;
+    margin: auto 0;
+   
+}
+.nav-item:hover{
+    background-color: #ff9090;
+    opacity: 70%;
+    font-size: 1.25rem;
+    margin: auto 0;
+}
+.nav--link{
+    padding: 0.75em;
+   
+}
+
+
+@media screen and (min-width:600px){
+    .menu-btn {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+    .side-nav {
+        display: flex;
+        
+    }
+    .nav-item {
+        margin-left:0.5em ;
+    }
+}

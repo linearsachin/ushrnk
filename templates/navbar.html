@@ -1,0 +1,41 @@
+{% load static %}
+{% block extra_head %}
+    
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    
+{% endblock extra_head %}
+
+
+<nav class="navbar">
+    <div class="main-nav">
+        <div class="logo">
+            USHRNK
+        </div>
+        <div class="menu-btn" id="menu-btn">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="side-nav" id="side-nav">
+        <div class="nav-item">
+            <a href="#" class="nav--link">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="#" class="nav--link">About</a>
+        </div>
+        <div class="nav-item">
+            <a href="#" class="nav--link">Contact</a>
+        </div>
+        <div class="nav-item">
+            <a href="#" class="nav--link">Login</a>
+        </div>
+        <div class="nav-item">
+            <a href="#" class="nav--link">Signup</a>
+        </div>
+    </div> 
+</nav>
+
+<script>
+    $("#menu-btn").click(function(){
+        $("#side-nav").toggle();
+    });
+</script>
