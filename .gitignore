@@ -4,3 +4,4 @@ ushort/.env
 db.sqlite3
 __pycache__
 development.py
+staticfiles
