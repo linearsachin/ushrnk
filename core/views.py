@@ -3,7 +3,7 @@ from django.views.generic import View ,ListView
 import random, string
 from django.db.models import F
 from django.utils import timezone
-
+from django.http import JsonResponse
 from .models  import (
     ShrnkUrl,
     Click,
@@ -74,3 +74,29 @@ class ShrnkView(View):
                 clicks=1,
             )
         return redirect(shrnk_url[0].og_url)
+
+class ChartView(View):
+    def get(self, request,slug, *args, **kwargs):
+        context = {
+            'slug':slug,
+        }
+        return render(request,'core/metrics.html',context)
+
+    def post(self, request, *args, **kwargs):
+        return HttpResponse('POST request!')
+
+def chart(request, slug):
+    labels = []
+    data = []
+    shrnk = ShrnkUrl.objects.get(shrnk_url_slug=slug)
+    queryset = Click.objects.filter(shrnk_url =shrnk ).order_by('-date')
+    for entry in queryset:
+        labels.append(entry.date)
+        data.append(entry.clicks)
+    print(labels, data)
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data,
+    })
+
+
