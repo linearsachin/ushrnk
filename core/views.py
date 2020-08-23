@@ -1,6 +1,9 @@
 from django.shortcuts import render,redirect
 from django.views.generic import View ,ListView
 import random, string
+from django.db.models import F
+from django.utils import timezone
+
 from .models  import (
     ShrnkUrl,
     Click,
@@ -53,9 +56,21 @@ class HomeView(View):
 
 class ShrnkView(View):
     def get(self, request,slug, *args, **kwargs):
-        shrnk_url = ShrnkUrl.objects.get(
+        shrnk_url = ShrnkUrl.objects.filter(
             shrnk_url_slug=slug
         )
-        return redirect(shrnk_url.og_url)
-    def post(self, request, *args, **kwargs):
-        return HttpResponse('POST request!')
+        shrnk_url.update(total_clicks=F('total_clicks')+1)
+        print(timezone.now().date(), type(timezone.now().date,))
+        if Click.objects.filter(
+            shrnk_url = shrnk_url[0], 
+            date = timezone.now().date(),
+        ).exists():
+            click = Click.objects.filter(shrnk_url = shrnk_url[0],date = timezone.now().date(),)
+            click.update(clicks = F('clicks')+1)
+        else:
+            Click.objects.create(
+                shrnk_url = shrnk_url[0],
+                date = timezone.now().date(),
+                clicks=1,
+            )
+        return redirect(shrnk_url[0].og_url)
