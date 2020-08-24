@@ -11,6 +11,7 @@
         <form action="#" method="POST" class="shrnk-form">
             {% csrf_token %}
             <div class="input-box">
+                <label for="x-code" class="label">Enter url to shrink</label>
                 {{form.og_url}}
             </div>
             <div class="shrnk-btn-box">
