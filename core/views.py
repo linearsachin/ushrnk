@@ -19,6 +19,8 @@ class HomeView(View):
             'form':form,
             'slug':slug
         }
+        print(request.META)
+
         return render(request,'core/index.html',context)
  
     def post(self, request, *args, **kwargs):
@@ -73,7 +75,6 @@ class ShrnkView(View):
             shrnk_url_slug=slug
         )
         shrnk_url.update(total_clicks=F('total_clicks')+1)
-        print(timezone.now().date(), type(timezone.now().date,))
         if Click.objects.filter(
             shrnk_url = shrnk_url[0], 
             date = timezone.now().date(),
