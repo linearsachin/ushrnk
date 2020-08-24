@@ -6,21 +6,23 @@
 {% block content %}
 <div class="main">
     <div class="shrnk-url">
-
+      <input type="text" id="x-code">
     </div>
     <div class="chart" id="chart-box" style="width: 75%;">
-        <canvas id="chart" data-url="{% url 'chart' slug=slug %}"></canvas>
+        <canvas id="chart"></canvas>
     </div>
 </div>
 <script>
-    $(function () {
+    $('#x-code').change(function () {
 
-      var $populationChart = $("#chart");
+      var $clickChart = $("#chart");
+      let xCode = document.getElementById('x-code').value 
+      let url = "http://127.0.0.1:8000/api/clicks/"+xCode
       $.ajax({
-        url: $populationChart.data("url"),
+        url: url,
         success: function (data) {
-
-          var ctx = $populationChart[0].getContext("2d");
+          console.log(data)
+          var ctx = $clickChart[0].getContext("2d");
 
           new Chart(ctx, {
             type: 'bar',

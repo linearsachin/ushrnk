@@ -20,15 +20,22 @@
     </div>
 </div>
 {% if slug %}
-<div class="container">
-    <div class="output-link">
-        <div class="op--link">
-            <a href="{{slug.get_shrnk_url}}" class="link" target="_blank">{{slug.get_shrnk_url}}</a>
+<div class="main">
+    <div class="container">
+        <div class="output-link">
+            <div class="op--link">
+                <a href="{{slug.get_shrnk_url}}" class="link" target="_blank">{{slug.get_shrnk_url}}</a>
+            </div>
+            <div class="copy-btn" onclick="copyToClipboard('.link')">
+                <span class="material-icons">
+                    content_copy
+                </span>
+            </div>
         </div>
-        <div class="copy-btn" onclick="copyToClipboard('.link')">
-            <span class="material-icons">
-                content_copy
-            </span>
+        <div class="output-xcode">
+            <div class="op--xcode">
+                <p>{{slug.xcode}}</p>
+            </div>
         </div>
     </div>
 </div>
