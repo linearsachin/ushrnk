@@ -25,7 +25,7 @@
 
       var $clickChart = $("#chart");
       let xCode = document.getElementById('x-code').value 
-      let url = "http://127.0.0.1:8000/api/clicks/"+xCode
+      let url = "https://ushrnk.herokuapp.com/api/clicks/"+xCode
       $.ajax({
         url: url,
         success: function (data) {
