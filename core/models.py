@@ -5,7 +5,7 @@ import string, random
 class ShrnkUrl(models.Model):
     og_url = models.URLField()
     shrnk_url_slug = models.CharField(max_length=10,unique=True)
-    xcode =models.CharField(max_length=5,unique=True)
+    xcode =models.CharField(max_length=5,unique=True,blank=True, null=True)
     total_clicks = models.IntegerField(default=0)
 
     def __str__(self):
