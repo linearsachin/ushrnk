@@ -19,8 +19,6 @@ class HomeView(View):
             'form':form,
             'slug':slug
         }
-        print(request.META)
-
         return render(request,'core/index.html',context)
  
     def post(self, request, *args, **kwargs):
