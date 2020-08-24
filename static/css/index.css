@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+
 .container {
     margin: 2em auto;
     max-width:900px ;
@@ -29,7 +32,7 @@
 .shrnk-btn {
     padding: 0.75em;
     background-color: darkmagenta;
-    border-radius: 2px;
+    border: 0;
     box-shadow: 2px 2px pink;
     color: white;
 }
@@ -53,13 +56,19 @@
     margin-bottom: 1em;
 }
 
+label {
+    font-family: 'Manrope', cursive;
+}
+
 
 @media screen and (min-width:600px) {
     .shrnk-form {
         display:flex;
         justify-content:space-between ;
     }
-
+    label {
+        font-family: 'Manrope', cursive;
+    }
     .input-box {
         width: 90%;
         margin: auto;
