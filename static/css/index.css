@@ -21,6 +21,7 @@
     padding: 0.5rem 0.75rem; 
     line-height: 28px; 
     border:0;
+    outline: none;
     border-bottom: 2px solid purple;
 }
 
@@ -57,6 +58,8 @@
 }
 
 label {
+    display: block;
+    text-align: center;
     font-family: 'Manrope', cursive;
 }
 
@@ -67,6 +70,7 @@ label {
         justify-content:space-between ;
     }
     label {
+        display: inline;
         font-family: 'Manrope', cursive;
     }
     .input-box {
