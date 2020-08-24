@@ -1,14 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 {% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 {% endblock extra_head %}
 
 {% block content %}
-<div class="main">
-    <div class="shrnk-url">
-      <input type="text" id="x-code">
+<div class="container">
+    <div class="shrnk-form">
+      <div class="input-box">
+        <input type="text" id="x-code" class="input">
+      </div>
+      <div class="shrnk-btn-box">
+        <button class="shrnk-btn">SUBMIT</button>
+      </div>
     </div>
-    <div class="chart" id="chart-box" style="width: 75%;">
+    <div class="chart" id="chart-box" style="width: 100%;">
         <canvas id="chart"></canvas>
     </div>
 </div>
