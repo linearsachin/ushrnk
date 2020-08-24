@@ -59,7 +59,7 @@ class HomeView(View):
         while we_dont_have_it:
             try:
                 letters = string.ascii_letters + '0123456789'
-                ui = str(random.randint(100,999)) + ''.join(random.choice(letters) for i in range(3))
+                ui = str(random.randint(10,99)) + ''.join(random.choice(letters) for i in range(3))
                 sr = ''.join(random.sample(ui, len(ui)))
                 return sr
             except:
